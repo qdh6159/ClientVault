@@ -6,3 +6,22 @@ ClientVault simplifies client relation management for Investment professionals. 
 2. Hook Implementation
 3. Filter Feature
 4. Premium Style
+
+# Bonus 
+* Combine multiple filters
+* Search Feature
+* Live Stock Market API
+* TODO Component
+* Star/watchlist button on Client cards
+* Associate Stock ticker and quantity to each client
+* Create individual stock portfolios
+* Advisor DB
+* Advisor Login
+* Assign registered advisors to each client 
+* Advisor chat
+* Client retirement goals
+* Mobile friendly
+* Task reminder 
+* Holiday, Bday, event notifications
+
+# Wireframes 
