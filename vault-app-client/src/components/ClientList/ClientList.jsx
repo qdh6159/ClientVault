@@ -20,44 +20,38 @@ import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap
 //   Container
 // } from "shards-react";
 
-function PlantList(props){
+function ClientList(props){
 
-  // const plants = props.plants.map(function(plant){
-  //     return (
-  //       <li key={plant._id}>
-  //         <Card small={true} style={{ maxWidth: "250px" }}>
-  //         <CardHeader></CardHeader>
-  //         <CardImg src={plant.imageOne} />
-  //         <CardBody>
-  //         <CardTitle>{plant.name}</CardTitle>
-  //         <p>uploaded by: {plant.user.username}</p>
-        
-
-  //       <MoreModal updatePlant={props.updatePlant} deletePlant={props.deletePlant} id={plant._id}name={plant.name} scientificName={plant.scientificName} water={plant.water} sun={plant.sun} description={plant.description}
-  //       imageOne={plant.imageOne} imageTwo={plant.imageTwo}
-  //       />
-  //     </CardBody>
-      
-  //   </Card>
-  //     </li>)
-    // })
+  const clients = props.clients.map(function(client){
+      return (
+        <li key={client._id}> 
+          <Card >
+          <CardHeader tag="h3">{client.name}</CardHeader>
+          <CardBody>
+            <CardTitle>Portfolio Value: {client.value}</CardTitle>
+            <CardTitle>Last contact: 2018-05-23</CardTitle>  
+          </CardBody>
+          <CardFooter>
+            <Button>View Details</Button>
+          </CardFooter>
+        </Card>
+        </li>)
+    })
   
     return (
       
       <ul class="plantList">
-        {/* {plants} */}
-        <Card  >
-        <CardHeader tag="h3">Jane Low</CardHeader>
-        <CardBody>
-          <CardTitle>Portfolio Value: $50,740.23</CardTitle>
-          <CardTitle>Last contact: 2018-05-23</CardTitle>
-          
-          
-        </CardBody>
-        <CardFooter>
-          <Button>View Details</Button>
-        </CardFooter>
-      </Card>
+        {clients}
+        {/* <Card >
+          <CardHeader tag="h3">Jane Low</CardHeader>
+          <CardBody>
+            <CardTitle>Portfolio Value: $50,740.23</CardTitle>
+            <CardTitle>Last contact: 2018-05-23</CardTitle>  
+          </CardBody>
+          <CardFooter>
+            <Button>View Details</Button>
+          </CardFooter>
+        </Card>
 
       <Card>
         <CardHeader tag="h3">Bobby Jones</CardHeader>
@@ -96,12 +90,27 @@ function PlantList(props){
         <CardFooter>
           <Button>View Details</Button>
         </CardFooter>
-      </Card>
+      </Card> */}
       </ul>
      
       )
 }
 
 
-export default PlantList
+export default ClientList
 
+{/* <li key={plant._id}>
+<Card small={true} style={{ maxWidth: "250px" }}>
+<CardHeader></CardHeader>
+<CardImg src={plant.imageOne} />
+<CardBody>
+<CardTitle>{plant.name}</CardTitle>
+<p>uploaded by: {plant.user.username}</p>
+
+
+<MoreModal updatePlant={props.updatePlant} deletePlant={props.deletePlant} id={plant._id}name={plant.name} scientificName={plant.scientificName} water={plant.water} sun={plant.sun} description={plant.description}
+imageOne={plant.imageOne} imageTwo={plant.imageTwo}
+/>
+</CardBody>
+
+</Card> */}

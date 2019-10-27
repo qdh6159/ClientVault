@@ -5,7 +5,7 @@ import { Button, ButtonGroup, Modal, ModalBody, ModalHeader } from "shards-react
 import BasicModalExample from "./Component"
 
 
-export default function PlantNav(props) {
+export default function ClientNav(props) {
     return (
         <div>
         <Nav>
@@ -17,7 +17,7 @@ export default function PlantNav(props) {
         
         <NavItem id="form-control">
           <FormInput placeholder="Search" id="search"/>
-          <BasicModalExample createPlant = {props.createPlant}/>
+          <BasicModalExample createClient = {props.createClient}/>
           <Button theme="success">Watchlist</Button>
         </NavItem>
         

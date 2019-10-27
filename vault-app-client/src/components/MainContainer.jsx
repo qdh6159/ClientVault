@@ -1,9 +1,7 @@
 import React, { Component} from 'react'
-import PlantList from "./PlantList/PlantList"
-import PlantNav from "./nav"
-import {
-    Container, Row, Col, Jumbotron, Button
-  } from "reactstrap";
+import ClientList from "./ClientList/ClientList"
+import ClientNav from "./nav"
+import {Container, Row, Col, Jumbotron, Button} from "reactstrap";
 
 
 
@@ -11,7 +9,7 @@ class MainContainer extends Component {
     constructor() {
         super();
         this.state = {
-            plants: []
+            clients: []
         }
     }
 
@@ -22,14 +20,14 @@ class MainContainer extends Component {
     deletePlant = async (id) => {
         console.log(id)
         try{
-            const deletePlant = await fetch(`${process.env.REACT_APP_BACKEND_ADDRESS}/plants/${id}`, {
+            const deletePlant = await fetch(`${process.env.REACT_APP_BACKEND_ADDRESS}/clients/${id}`, {
                 method: "DELETE",
                 credentials: "include",
             })
             const parsedResponse = await deletePlant.json();
             if(parsedResponse.status.code === 200) {
                 this.setState({
-                    plants: this.state.plants.filter(plant => plant._id !== id)
+                    clients: this.state.clients.filter(plant => plant._id !== id)
                     
                 })
             }
@@ -38,7 +36,7 @@ class MainContainer extends Component {
         }
     }
     updatePlant = async (id, formData) => {
-        const updatePlant = await fetch(`${process.env.REACT_APP_BACKEND_ADDRESS}/plants/${id}`, {
+        const updatePlant = await fetch(`${process.env.REACT_APP_BACKEND_ADDRESS}/clients/${id}`, {
             method: "PUT",
             body: JSON.stringify(formData),
             credentials: "include",
@@ -49,7 +47,7 @@ class MainContainer extends Component {
         const parsedResponse = await updatePlant.json();
         if(parsedResponse.status.code === 201){
             this.setState({
-                plants: this.state.plants.map(function(plant){
+                clients: this.state.clients.map(function(plant){
                     if(plant._id === id){
                         return parsedResponse.data
                     }else{
@@ -60,10 +58,10 @@ class MainContainer extends Component {
         }
         console.log(parsedResponse)
     }
-    createPlant = async (formData) => {
+    createClient = async (formData) => {
         console.log(formData)
         try{
-            const newPlant = await fetch(`${process.env.REACT_APP_BACKEND_ADDRESS}/plants`, {
+            const newClient = await fetch('http://localhost:9000/clients', {
                 method: "POST",
                 body: JSON.stringify(formData),
                 credentials: "include",
@@ -72,10 +70,11 @@ class MainContainer extends Component {
                     
                 }
             })
-            const parsedResponse = await newPlant.json();
+            const parsedResponse = await newClient.json();
             if(parsedResponse.status.code === 201){
+                console.log("Got the clients")
                 this.setState({
-                    plants: [...this.state.plants, parsedResponse.data]
+                    clients: [...this.state.clients, parsedResponse.data]
                 })
             }
             console.log("********************")
@@ -88,11 +87,11 @@ class MainContainer extends Component {
     getMovies = async () => {
         try{
             console.log("Getting the movies*****************")
-        const plants = await fetch("http://localhost:9000/plants")
-        const parsedResponse = await plants.json();
+        const clients = await fetch("http://localhost:9000/clients")
+        const parsedResponse = await clients.json();
         if(parsedResponse.status.code === 200){
             this.setState({
-                plants: parsedResponse.data})
+                clients: parsedResponse.data})
                 console.log(parsedResponse.data)
                 console.log("We got the movies")
                 console.log(this.state)
@@ -104,13 +103,13 @@ class MainContainer extends Component {
     render() {
         return(
             <div>
-                <PlantNav createPlant= {this.createPlant} />
+                <ClientNav createClient= {this.createClient} />
                 <h3>.</h3>
                 
                 <Container fluid>
                     <Row>
                         <Col id="playList" xs="3">1 / 12
-                        <PlantList updatePlant={this.updatePlant} deletePlant={this.deletePlant} plants={this.state.plants} />
+                        <ClientList updatePlant={this.updatePlant} deletePlant={this.deletePlant} clients={this.state.clients} />
                         </Col>
                         <Col style={{marginTop: 100}}>2 / 12
                         <Jumbotron fluid lg="3">

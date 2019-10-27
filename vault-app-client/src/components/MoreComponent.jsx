@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Modal, ModalBody, ModalHeader, ModalFooter} from "shards-react";
 import { Form, FormInput, FormGroup, FormTextarea } from "shards-react";
 import { Container, Row, Col } from "shards-react";
-import EditPlant from './editPlant'
+import EditPlant from './EditClient'
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css"
