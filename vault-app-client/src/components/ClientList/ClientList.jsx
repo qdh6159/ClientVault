@@ -10,10 +10,18 @@ import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap
 
 function ClientList(props){
   const [name, setName] = useState(null)
+  const [value, setValue] = useState(null)
 
 
 
   const clients = props.clients.map(function(client, index){
+    const click = function(){
+      console.log("click button")
+      setName(client.name)
+      setValue(client.value)
+    }
+    
+
       return (
         <li key={client._id}> 
           <Card >
@@ -23,7 +31,7 @@ function ClientList(props){
             <CardTitle>Last contact: 2018-05-23</CardTitle>  
           </CardBody>
           <CardFooter>
-            <Button onClick={()=> setName(client.name)}>View Details</Button>
+            <Button onClick={()=> click()}>View Details</Button>
           </CardFooter>
         </Card>
         </li>)
@@ -42,6 +50,7 @@ function ClientList(props){
           <Col style={{marginTop: 100}}>2 / 12
           <Jumbotron fluid lg="3">
               <h1 className="display-3">Name:{name} </h1>
+              <h2 className="display-3">Value:{value} </h2>
               <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
               <hr className="my-2" />
               <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
