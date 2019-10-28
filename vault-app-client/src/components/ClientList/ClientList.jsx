@@ -16,7 +16,7 @@ function ClientList(props){
       setValue(client.value)
       setTimeout(() => {
         setLoading(false)
-        console.log('Alligator!!!!');
+        console.log('loading');
       }, 750);
 
     }
