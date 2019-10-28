@@ -25,6 +25,7 @@ ClientVault simplifies client relation management for Investment professionals. 
 * Holiday, Bday, event notifications
 
 # Code Snippet
+![alt text](https://raw.githubusercontent.com/qdh6159/ClientVault/master/images/Image%2010-28-19%20at%203.13%20PM.jpg)
 
 # Wireframes 
 ![alt text](https://raw.githubusercontent.com/qdh6159/ClientVault/master/images/UNADJUSTEDNONRAW_thumb_22a7.jpg)
