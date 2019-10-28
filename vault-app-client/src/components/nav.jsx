@@ -1,7 +1,7 @@
 import React from "react";
-import { Nav, NavItem, NavLink } from "shards-react";
+import { Nav, NavItem } from "shards-react";
 import { FormInput } from "shards-react";
-import { Button, ButtonGroup, Modal, ModalBody, ModalHeader } from "shards-react";
+import { Button } from "shards-react";
 import BasicModalExample from "./Component"
 
 

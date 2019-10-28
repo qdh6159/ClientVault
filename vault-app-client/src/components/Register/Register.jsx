@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { FormInput } from "shards-react";
-import { Button, Modal, ModalBody, ModalHeader } from "shards-react";
+import { Button} from "shards-react";
 class Register extends Component {
     constructor(){
         super();

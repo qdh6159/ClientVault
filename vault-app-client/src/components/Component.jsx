@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Modal, ModalBody, ModalHeader } from "shards-react";
-import { Form, FormInput, FormGroup, FormTextarea } from "shards-react";
-import { Container, Row, Col } from "shards-react";
+import { Form, FormInput, FormGroup } from "shards-react";
+import { Container, Col } from "shards-react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css"
 

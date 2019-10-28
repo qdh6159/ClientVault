@@ -1,9 +1,6 @@
 import React, { Component} from 'react'
 import ClientList from "./ClientList/ClientList"
 import ClientNav from "./nav"
-import {Container, Row, Col, Jumbotron, Button} from "reactstrap";
-
-
 
 class MainContainer extends Component {
     constructor() {
@@ -15,7 +12,7 @@ class MainContainer extends Component {
 
     componentDidMount() {
         console.log("component is mounting")
-        this.getMovies();
+        this.getClients();
     }
     deletePlant = async (id) => {
         console.log(id)
@@ -84,7 +81,7 @@ class MainContainer extends Component {
         }
     }
 
-    getMovies = async () => {
+    getClients = async () => {
         try{
             console.log("Getting the movies*****************")
         const clients = await fetch("http://localhost:9000/clients")
