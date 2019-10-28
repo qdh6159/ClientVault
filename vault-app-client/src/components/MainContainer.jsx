@@ -105,34 +105,9 @@ class MainContainer extends Component {
             <div>
                 <ClientNav createClient= {this.createClient} />
                 <h3>.</h3>
+                <ClientList updatePlant={this.updatePlant} deletePlant={this.deletePlant} clients={this.state.clients} />
+
                 
-                <Container fluid>
-                    <Row>
-                        <Col id="playList" xs="3">1 / 12
-                        <ClientList updatePlant={this.updatePlant} deletePlant={this.deletePlant} clients={this.state.clients} />
-                        </Col>
-                        <Col style={{marginTop: 100}}>2 / 12
-                        <Jumbotron fluid lg="3">
-                            <h1 className="display-3">Client Detail View</h1>
-                            <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
-                            <hr className="my-2" />
-                            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-                            <p className="lead">
-                            <Button color="primary">Learn More</Button>
-                            </p>
-                        </Jumbotron>
-                        <Jumbotron  sm="3">
-                            <h1 className="display-3">Market Overview</h1>
-                           
-                            <Button color="primary">Learn More</Button>
-                           
-                        </Jumbotron>
-                        
-                        </Col>
-                        
-                        {/* <Col>3 / 12</Col> */}
-                    </Row>
-                </Container>
             </div>
         )
     }

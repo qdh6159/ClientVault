@@ -1,28 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 // import plantsContainer from './plantsContainer/plantsContainer'
 import BasicCardExample from '../Cards/Card'
 import MoreModal from '../MoreComponent'
-import {  Card, Button, CardHeader, CardFooter, CardBody,
-  CardTitle, CardText } from 'reactstrap';
+import {  Container, Card, Button, CardHeader, CardFooter, CardBody,
+  CardTitle, CardText, Jumbotron, Row, Col } from 'reactstrap';
 
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 
-  
-// import {
-//   Card,
-//   CardHeader,
-//   CardTitle,
-//   CardImg,
-//   CardBody,
-//   CardFooter,
-//   Button,
-//   Container
-// } from "shards-react";
-
 function ClientList(props){
+  const [name, setName] = useState(null)
 
-  const clients = props.clients.map(function(client){
+
+
+  const clients = props.clients.map(function(client, index){
       return (
         <li key={client._id}> 
           <Card >
@@ -32,7 +23,7 @@ function ClientList(props){
             <CardTitle>Last contact: 2018-05-23</CardTitle>  
           </CardBody>
           <CardFooter>
-            <Button>View Details</Button>
+            <Button onClick={()=> setName(client.name)}>View Details</Button>
           </CardFooter>
         </Card>
         </li>)
@@ -40,58 +31,34 @@ function ClientList(props){
   
     return (
       
-      <ul class="plantList">
-        {clients}
-        {/* <Card >
-          <CardHeader tag="h3">Jane Low</CardHeader>
-          <CardBody>
-            <CardTitle>Portfolio Value: $50,740.23</CardTitle>
-            <CardTitle>Last contact: 2018-05-23</CardTitle>  
-          </CardBody>
-          <CardFooter>
-            <Button>View Details</Button>
-          </CardFooter>
-        </Card>
+      
 
-      <Card>
-        <CardHeader tag="h3">Bobby Jones</CardHeader>
-        <CardBody>
-          <CardTitle>Portfolio Value: $50,740.23</CardTitle>
-          <CardTitle>Last contact: 2018-05-23</CardTitle>
-          
-          
-        </CardBody>
-        <CardFooter>
-          <Button>View Details</Button>
-        </CardFooter>
-      </Card>
+      <Container fluid>
+      <Row>
+          <Col id="playList" xs="3">1 / 12
+          <ul class="plantList">{clients}</ul>
+          </Col>
 
-      <Card>
-      <CardHeader tag="h3">Billy West</CardHeader>
-        <CardBody>
-          <CardTitle>Portfolio Value: $50,740.23</CardTitle>
-          <CardTitle>Last contact: 2018-05-23</CardTitle>
-          
-          
-        </CardBody>
-        <CardFooter>
-          <Button>View Details</Button>
-        </CardFooter>
-      </Card>
+          <Col style={{marginTop: 100}}>2 / 12
+          <Jumbotron fluid lg="3">
+              <h1 className="display-3">Name:{name} </h1>
+              <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
+              <hr className="my-2" />
+              <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+              <p className="lead">
+              <Button color="primary">Learn More</Button>
+              </p>
+          </Jumbotron>
 
-      <Card>
-      <CardHeader tag="h3">Brandon Livingston</CardHeader>
-        <CardBody>
-          <CardTitle>Portfolio Value: $50,740.23</CardTitle>
-          <CardTitle>Last contact: 2018-05-23</CardTitle>
+          <Jumbotron  sm="3">
+              <h1 className="display-3">Market Overview</h1>
+              <Button color="primary">Learn More</Button>  
+          </Jumbotron>
+          </Col>
           
-          
-        </CardBody>
-        <CardFooter>
-          <Button>View Details</Button>
-        </CardFooter>
-      </Card> */}
-      </ul>
+          {/* <Col>3 / 12</Col> */}
+      </Row>
+      </Container>
      
       )
 }
