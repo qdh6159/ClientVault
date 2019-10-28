@@ -24,7 +24,7 @@ ClientVault simplifies client relation management for Investment professionals. 
 * Task reminder 
 * Holiday, Bday, event notifications
 
-# Code Snippet
+# Code Snippet - # State Hook
 ![alt text](https://raw.githubusercontent.com/qdh6159/ClientVault/master/images/Image%2010-28-19%20at%203.13%20PM.jpg)
 
 # Wireframes 
