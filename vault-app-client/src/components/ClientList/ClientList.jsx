@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
-import {  Container, Card, Button, CardHeader, CardFooter, CardBody,CardTitle, Jumbotron, Row, Col, Spinner }from 'reactstrap';
+import { Table, Container, Card, Button, CardHeader, CardFooter, CardBody,CardTitle, Jumbotron, Row, Col, Spinner }from 'reactstrap';
 import Filter from '../filters/FilterComponent'
+import StockTable from '../table/TableComponent'
+import StockNav from '../stockNav/StockNav'
+import Accounts from '../accounts/Accounts'
 
 function ClientList(props){
   const [name, setName] = useState(null)
@@ -53,12 +56,12 @@ function ClientList(props){
           </Col>
   
           <Col style={{marginTop: 100}}>2 / 12
-            <Jumbotron fluid lg="3">
+            <div fluid lg="3">
             <Spinner style={{ width: '10rem', height: '10rem' }} type="grow" color="primary" />
               <p className="lead">
               <Button color="primary">Learn More</Button>
               </p>
-            </Jumbotron>  
+            </div>  
   
             <Jumbotron  sm="3">
                 <h1 className="display-3">Market Overview</h1>
@@ -84,19 +87,30 @@ function ClientList(props){
           <ul class="plantList">{clients}</ul>
           </Col>
   
-          <Col style={{marginTop: 100}}>2 / 12
-            <Jumbotron fluid lg="3">
-            
-              <h1 className="display-3">Name:{name} </h1>
-              <h2 className="display-3">Value:{value} </h2>
-              <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
+          <Col style={{marginTop: 30}}>2 / 12
+            <div fluid lg="3" class="mainJumbo">
+
+              
+
+              <h1 class="mainName">{name} <span class="mainSpin"><Spinner style={{ width: '3rem', height: '3rem' }} type="grow" color="success" /></span></h1> 
+              <div class="accounts">
+                <Accounts value = {value} />
+                
+
+              </div>
+              {/* <h1 className="display-3">Name:{name} </h1>
+              <h2 className="display-3">Value:{value} </h2> */}
+              <p className="lead">Top Preformers</p>
               <hr className="my-2" />
-              <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+              {/* <StockNav /> */}
+              <StockTable />
+
+              
               <p className="lead">
               <Button color="primary">Learn More</Button>
               {/* <Button color="danger" onClick={()=> props.deleteClient({id})}>delete</Button> */}
               </p>
-            </Jumbotron>  
+            </div>  
   
             <Jumbotron  sm="3">
                 <h1 className="display-3">Market Overview</h1>
