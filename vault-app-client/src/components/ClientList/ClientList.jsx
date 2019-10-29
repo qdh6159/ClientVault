@@ -87,7 +87,7 @@ function ClientList(props){
           <ul class="plantList">{clients}</ul>
           </Col>
   
-          <Col style={{marginTop: 30}}>2 / 12
+          <Col class="bigCol" style={{marginTop: 30},{positionRight: 10}}>2 / 12
             <div fluid lg="3" class="mainJumbo">
 
               
