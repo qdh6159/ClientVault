@@ -12,6 +12,8 @@ export default class BasicModalExample extends React.Component {
       open: false,
       name: "",
       value: "",
+      rating: "",
+      retirement: "",
   
      };
     this.toggle = this.toggle.bind(this);
@@ -51,6 +53,16 @@ export default class BasicModalExample extends React.Component {
                   <FormGroup>
                     <label htmlFor="value">Value</label>
                   <FormInput onChange={this.handleChange} name="value" id="value" placeholder="value" />                       
+                  </FormGroup>
+
+                  <FormGroup>
+                    <label htmlFor="rating">Rating</label>
+                  <FormInput onChange={this.handleChange} name="rating" id="rating" placeholder="rating" />                       
+                  </FormGroup>
+
+                  <FormGroup>
+                    <label htmlFor="retirement">Retirement?</label>
+                  <FormInput onChange={this.handleChange} name="retirement" id="retirement" placeholder="retirement" />                       
                   </FormGroup>
       
                     <br></br>

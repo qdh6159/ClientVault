@@ -1,12 +1,14 @@
 import React, {useState} from 'react';
-import {  Container, Card, Button, CardHeader, CardFooter, CardBody,
-  CardTitle, Jumbotron, Row, Col, Spinner
- }from 'reactstrap';
+import {  Container, Card, Button, CardHeader, CardFooter, CardBody,CardTitle, Jumbotron, Row, Col, Spinner }from 'reactstrap';
+import Filter from '../filters/FilterComponent'
 
 function ClientList(props){
   const [name, setName] = useState(null)
   const [value, setValue] = useState(null)
+  const [id, setId] = useState(null)
   const [loading, setLoading] = useState(false)
+
+  
 
   const clients = props.clients.map(function(client, index){
     const click = function(){
@@ -14,12 +16,15 @@ function ClientList(props){
       setLoading(true)
       setName(client.name)
       setValue(client.value)
+      setId(client._id)
       setTimeout(() => {
         setLoading(false)
         console.log('loading');
       }, 750);
 
     }
+
+    
 
       return (
         <li key={client._id}> 
@@ -31,6 +36,7 @@ function ClientList(props){
           </CardBody>
           <CardFooter>
             <Button onClick={()=> click()}>View Details</Button>
+            <Button color="danger" onClick={()=> props.deleteClient(client._id)}>delete</Button>
           </CardFooter>
         </Card>
         </li>)
@@ -64,11 +70,17 @@ function ClientList(props){
        
         )
     }else{
+      // const deleteClient = (id) => {
+      //   console.log("Deleting client")
+      //   props.deleteClient(id)
+      let clientId = {id}
+      console.log({id})
       return (
       
         <Container fluid>
         <Row>
           <Col id="playList" xs="3">1 / 12
+          <Filter turnOffRetirementFilter={props.turnOffRetirementFilter} engageRetirementFilter= {props.engageRetirementFilter} />
           <ul class="plantList">{clients}</ul>
           </Col>
   
@@ -82,6 +94,7 @@ function ClientList(props){
               <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
               <p className="lead">
               <Button color="primary">Learn More</Button>
+              {/* <Button color="danger" onClick={()=> props.deleteClient({id})}>delete</Button> */}
               </p>
             </Jumbotron>  
   

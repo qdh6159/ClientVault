@@ -6,7 +6,8 @@ class MainContainer extends Component {
     constructor() {
         super();
         this.state = {
-            clients: []
+            clients: [],
+            qualifiedFilter: null
         }
     }
 
@@ -14,19 +15,22 @@ class MainContainer extends Component {
         console.log("component is mounting")
         this.getClients();
     }
-    deletePlant = async (id) => {
-        console.log(id)
+    deleteClient = async (id) => {
+        
         try{
-            const deletePlant = await fetch(`${process.env.REACT_APP_BACKEND_ADDRESS}/clients/${id}`, {
+            const deleteClient = await fetch(`http://localhost:9000/clients/${id}`, {
                 method: "DELETE",
-                credentials: "include",
+                // credentials: "include",
             })
-            const parsedResponse = await deletePlant.json();
+            const parsedResponse = await deleteClient.json();
+            console.log(parsedResponse)
             if(parsedResponse.status.code === 200) {
+                console.log(id)
                 this.setState({
-                    clients: this.state.clients.filter(plant => plant._id !== id)
+                    clients: this.state.clients.filter(client => client._id !== id)
                     
                 })
+                console.log(this.state.clients)
             }
         }catch(err){
             console.log(err)
@@ -80,7 +84,6 @@ class MainContainer extends Component {
 
         }
     }
-
     getClients = async () => {
         try{
             console.log("Getting the movies*****************")
@@ -97,12 +100,35 @@ class MainContainer extends Component {
             console.log(err)
         }
     }
+    engageRetirementFilter = () => {
+        console.log("turned on retirement filter")
+        this.setState({qualifiedFilter: true})
+    }
+    turnOffRetirementFilter = () => {
+        console.log("turned off retirement filter")
+        this.setState({qualifiedFilter: false})
+    }
+
+    
     render() {
+    //    let theClients = []
+
+        let clientFilter = this.state.clients.filter((clients) => {
+            if(this.state.qualifiedFilter === true){
+                return clients.retirement.includes("yes")
+            }else{
+                console.log("no filter detected - sending all clients")
+                return this.state.clients
+            }
+        })
+
+
+    
         return(
             <div>
                 <ClientNav createClient= {this.createClient} />
                 <h3>.</h3>
-                <ClientList updatePlant={this.updatePlant} deletePlant={this.deletePlant} clients={this.state.clients} />
+                <ClientList turnOffRetirementFilter={this.turnOffRetirementFilter} engageRetirementFilter={this.engageRetirementFilter} updatePlant={this.updatePlant} deleteClient={this.deleteClient} clients={clientFilter} />
 
                 
             </div>

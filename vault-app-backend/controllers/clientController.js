@@ -1,6 +1,7 @@
 const express = require('express');
 // Next we set up the Router
 const router = express.Router();
+// const bodyParser     = require('body-parser');
 
 // require Our Model - Remember Model is
 // a representation of our data
@@ -102,14 +103,16 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
 
   try {
-     const deletedPlant = await Client.findByIdAndRemove(req.params.id);
+     const deletedClient = await Client.findByIdAndRemove(req.params.id);
+     const allClients = await Client.find()
       res.json({
         status:  {
             code: 200,
             message: "Resource successfully deleted"
           },
-        data: deletedPlant
+        data: allClients
       });
+      
   } catch(err){
     res.send(err);
   }
