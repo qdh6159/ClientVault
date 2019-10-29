@@ -31,12 +31,12 @@ function ClientList(props){
 
       return (
         <li key={client._id}> 
-          <Card >
+          <Card style={{ backgroundColor: '#333', borderColor: '#333' }}>
           <CardHeader tag="h3">{client.name}</CardHeader>
-          <CardBody>
+          {/* <CardBody>
             <CardTitle>Portfolio Value: {client.value}</CardTitle>
             <CardTitle>Last contact: 2018-05-23</CardTitle>  
-          </CardBody>
+          </CardBody> */}
           <CardFooter>
             <Button onClick={()=> click()}>View Details</Button>
             <Button color="danger" onClick={()=> props.deleteClient(client._id)}>delete</Button>

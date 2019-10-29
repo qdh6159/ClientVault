@@ -1,5 +1,5 @@
 import React from 'react';
-import { Spinner, ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText, Button, ButtonGroup } from 'reactstrap';
+import { Badge, Spinner, ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText, Button, ButtonGroup } from 'reactstrap';
 
 const Accounts = (props) => {
   return (
@@ -9,7 +9,7 @@ const Accounts = (props) => {
         All Accounts
         </span>
         <h2 class ="mainValue">{props.value}</h2>
-        <p class="percent">+ 1.97%</p>
+        <p class="percent">+ 1.97%  <h6 class="privateClient"> <Badge size="sm" color="secondary">Private Client</Badge></h6></p> 
         
       </ListGroupItem>
       <ListGroupItem>
@@ -27,8 +27,10 @@ const Accounts = (props) => {
       </ListGroup>
         
       </ListGroupItem>
-      
+      <Button color="primary" size="lg" block>Call</Button>
+    <Button color="success" size="lg" block>Place Trade</Button>
     </ListGroup>
+    
   );
 }
 

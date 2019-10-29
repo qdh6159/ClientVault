@@ -111,7 +111,7 @@ img {
 }
 .accounts {
   height: 300px;
-  width: 320px;
+  width: 340px;
   /* border: 2px solid black; */
 }
 
@@ -155,4 +155,13 @@ img {
   color: rgb(142, 241, 142);
   font-size: 20px;
   margin-bottom: 0px;
+}
+
+table {
+  margin-top: 80px;
+}
+
+.privateClient{
+  display: inline-block;
+  margin-left: 47px;
 }
