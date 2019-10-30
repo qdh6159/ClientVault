@@ -6,7 +6,10 @@ const clientSchema = new mongoose.Schema({
   value: String,
   rating: String,
   retirement: String,
-
+  address: String,
+  birth: String,
+  notes: String,
+  profession: String
 
   // user: {
   //   type: mongoose.Schema.Types.ObjectId,

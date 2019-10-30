@@ -12,7 +12,11 @@ function ClientList(props){
   const [value, setValue] = useState(null)
   const [id, setId] = useState(null)
   const [loading, setLoading] = useState(false)
-
+  const [address, setAddress] = useState(null)
+  const [rating, setRating] = useState(null)
+  const [birth, setBirth] = useState(null)
+  const [notes, setNotes] = useState(null)
+  const [profession, setProfession] = useState(null)
   
 
   const clients = props.clients.map(function(client, index){
@@ -22,6 +26,12 @@ function ClientList(props){
       setName(client.name)
       setValue(client.value)
       setId(client._id)
+      setAddress()
+      setRating()
+      setBirth()
+      setNotes()
+      setProfession()
+
       setTimeout(() => {
         setLoading(false)
         console.log('loading');
@@ -120,6 +130,8 @@ function ClientList(props){
           <div class="rightColumn">
             <Col >
               <h3 class="clientInfo">Client Info</h3>
+
+            //***********************pass******************** */
               <AccountDetail />
             </Col>
           </div>  
