@@ -1,6 +1,8 @@
 import React, { Component} from 'react'
 import ClientList from "./ClientList/ClientList"
 import ClientNav from "./nav"
+import StatusBar from './statusBar/StatusBar'
+
 
 class MainContainer extends Component {
     constructor() {
@@ -112,8 +114,6 @@ class MainContainer extends Component {
 
     
     render() {
-    //    let theClients = []
-
         let clientFilter = this.state.clients.filter((clients) => {
             if(this.state.qualifiedFilter === true){
                 return clients.retirement.includes("yes")
@@ -122,15 +122,12 @@ class MainContainer extends Component {
                 return this.state.clients
             }
         })
-
-
-    
         return(
             <div>
                 <ClientNav createClient= {this.createClient} />
-                <h3>.</h3>
+                {/* <h3>.</h3> */}
                 <ClientList turnOffRetirementFilter={this.turnOffRetirementFilter} engageRetirementFilter={this.engageRetirementFilter} updatePlant={this.updatePlant} deleteClient={this.deleteClient} clients={clientFilter} />
-
+                <StatusBar />
                 
             </div>
         )

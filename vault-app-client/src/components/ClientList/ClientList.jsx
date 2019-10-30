@@ -4,6 +4,7 @@ import Filter from '../filters/FilterComponent'
 import StockTable from '../table/TableComponent'
 import StockNav from '../stockNav/StockNav'
 import Accounts from '../accounts/Accounts'
+import AccountDetail from '../accounts/AccountDetail'
 // import Chart from '../chart/Chart'
 
 function ClientList(props){
@@ -27,8 +28,6 @@ function ClientList(props){
       }, 750);
 
     }
-
-    
 
       return (
         <li key={client._id}> 
@@ -91,13 +90,10 @@ function ClientList(props){
           <Col class="bigCol" style={{marginTop: 30},{positionRight: 10}}>2 / 12
             <div fluid lg="3" class="mainJumbo">
 
-              
-
               <h1 class="mainName">{name} <span class="mainSpin"><Spinner style={{ width: '3rem', height: '3rem' }} type="grow" color="success" /></span></h1> 
               <div class="accounts">
                 <Accounts value = {value} />
                 
-
               </div>
               {/* <h1 className="display-3">Name:{name} </h1>
               <h2 className="display-3">Value:{value} </h2> */}
@@ -106,7 +102,6 @@ function ClientList(props){
               {/* <StockNav /> */}
               <StockTable />
 
-              
               <p className="lead">
               <Button color="primary">Learn More</Button>
               {/* <Button color="danger" onClick={()=> props.deleteClient({id})}>delete</Button> */}
@@ -119,7 +114,15 @@ function ClientList(props){
                 <h1 className="display-3">Market Overview</h1>
                 <Button color="primary">Learn More</Button>  
             </Jumbotron>
+          
           </Col>
+
+          <div class="rightColumn">
+            <Col >
+              <h3 class="clientInfo">Client Info</h3>
+              <AccountDetail />
+            </Col>
+          </div>  
         </Row>
         </Container>
        
