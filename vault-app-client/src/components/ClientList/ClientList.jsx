@@ -64,7 +64,7 @@ function ClientList(props){
             </div>  
   
             <Jumbotron  sm="3">
-                <h1 className="display-3">Market Overview</h1>
+                <h1 className="display-3">Loading Client</h1>
                 <Button color="primary">Learn More</Button>  
             </Jumbotron>
           </Col>
@@ -103,15 +103,15 @@ function ClientList(props){
               <StockTable />
 
               <p className="lead">
-              <Button color="primary">Learn More</Button>
+              <Button color="primary">See More</Button>
               {/* <Button color="danger" onClick={()=> props.deleteClient({id})}>delete</Button> */}
               </p>
             </div>  
 
             {/* <Chart /> */}
   
-            <Jumbotron  sm="3">
-                <h1 className="display-3">Market Overview</h1>
+            <Jumbotron sm="3" style={{ backgroundColor: '#333', borderColor: '#333' }}>
+                <h1 className="display-3">Social Media Activity</h1>
                 <Button color="primary">Learn More</Button>  
             </Jumbotron>
           

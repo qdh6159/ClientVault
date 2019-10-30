@@ -78,7 +78,11 @@ img {
   height: 800px;
   overflow: hidden;
   overflow-y: scroll;
+  list-style-type: none;
 }
+
+
+
 
 #playList{
   width: 55px;
@@ -175,8 +179,9 @@ table {
   width: 400px;
   height: 1000px;
   margin-top: 50px;
-  /* position: fixed; */
-  /* float: right; */
+  position: fixed;
+  right: 10px;
+  float: right;
   
 }
 .clientInfo{

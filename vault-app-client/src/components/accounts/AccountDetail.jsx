@@ -21,22 +21,28 @@ const AccountDetail = (props) => {
         {/* <h3>Buttons </h3> */}
       <ListGroup>
         <ListGroup>
-      <ListGroupItem active>
-        <ListGroupItemHeading>List group item heading</ListGroupItemHeading>
+      <ListGroupItem >
+        <ListGroupItemHeading>Recent Activity</ListGroupItemHeading>
+        <ListGroupItemText>
+        -Bought 500 shares of AAPL 
+        </ListGroupItemText>        
+        {/* <hr className="my-2" /> */}
+        <ListGroupItemText>
+        - Sold 400 shares of FB
+        </ListGroupItemText>   
+        
+        
+      </ListGroupItem>
+      <ListGroupItem>
+        <ListGroupItemHeading>Contact & Personal Info</ListGroupItemHeading>
         <ListGroupItemText>
         Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
         </ListGroupItemText>
       </ListGroupItem>
       <ListGroupItem>
-        <ListGroupItemHeading>List group item heading</ListGroupItemHeading>
+        <ListGroupItemHeading>Notes</ListGroupItemHeading>
         <ListGroupItemText>
-        Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
-        </ListGroupItemText>
-      </ListGroupItem>
-      <ListGroupItem>
-        <ListGroupItemHeading>List group item heading</ListGroupItemHeading>
-        <ListGroupItemText>
-        Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+        QH: 12-13-2018; Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
         </ListGroupItemText>
       </ListGroupItem>
     </ListGroup>
@@ -45,7 +51,8 @@ const AccountDetail = (props) => {
         
       </ListGroupItem>
       <Button color="primary" size="lg" block>Edit</Button>
-    <Button color="success" size="lg" block>Place Trade</Button>
+    <Button color="success" size="lg" block>+ New Appointment</Button>
+    <Button color="secondary" size="lg" block>Correspondence</Button>
     </ListGroup>
     
   );
