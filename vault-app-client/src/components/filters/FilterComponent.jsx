@@ -14,6 +14,8 @@ const Filter = (props) => {
       <DropdownMenu>
         <DropdownItem onClick={props.turnOffRetirementFilter}>Reset filter</DropdownItem>
         <DropdownItem onClick={props.engageRetirementFilter}>Qualified/retirement</DropdownItem>
+        <DropdownItem>Private Clients</DropdownItem>
+        <DropdownItem>Watchlist</DropdownItem>
         
       </DropdownMenu>
     </Dropdown>

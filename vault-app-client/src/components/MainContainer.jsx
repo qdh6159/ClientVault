@@ -7,7 +7,8 @@ class MainContainer extends Component {
         super();
         this.state = {
             clients: [],
-            qualifiedFilter: null
+            qualifiedFilter: null,
+            currentClient: null,
         }
     }
 

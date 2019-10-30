@@ -6,48 +6,48 @@ const StockTable = (props) => {
     <Table size="sm" dark hover >
       <thead>
         <tr>
-          <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
+          <th>Ticker</th>
+          <th>Company</th>
+          <th>Price</th>
+          <th>Quantity</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
+          <th scope="row">AAPL</th>
+          <td>Apple</td>
+          <td>$241.58</td>
+          <td>200</td>
         </tr>
         <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
+          <th scope="row">YUM</th>
+          <td>YUM! Brands</td>
+          <td>$89.50</td>
+          <td>100</td>
         </tr>
         <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
+          <th scope="row">LMD</th>
+          <td>Lockheed Martin</td>
+          <td>$376.74</td>
+          <td>230</td>
         </tr>
         <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
+          <th scope="row">GOOG</th>
+          <td>Alphebet Inc.</td>
+          <td>$1,259.46</td>
+          <td>200</td>
         </tr>
         <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
+          <th scope="row">TSLA</th>
+          <td>Tesla Inc.</td>
+          <td>$312.50</td>
+          <td>150</td>
         </tr>
         <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
+          <th scope="row">NFLX</th>
+          <td>Netflix</td>
+          <td>$291.30</td>
+          <td>300</td>
         </tr>
       </tbody>
     </Table>

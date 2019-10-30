@@ -4,6 +4,7 @@ import Filter from '../filters/FilterComponent'
 import StockTable from '../table/TableComponent'
 import StockNav from '../stockNav/StockNav'
 import Accounts from '../accounts/Accounts'
+// import Chart from '../chart/Chart'
 
 function ClientList(props){
   const [name, setName] = useState(null)
@@ -111,6 +112,8 @@ function ClientList(props){
               {/* <Button color="danger" onClick={()=> props.deleteClient({id})}>delete</Button> */}
               </p>
             </div>  
+
+            {/* <Chart /> */}
   
             <Jumbotron  sm="3">
                 <h1 className="display-3">Market Overview</h1>
