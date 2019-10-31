@@ -10,7 +10,7 @@ export default class Edit extends Component {
     super(props);
     this.state = { 
       open: false,
-      name: props.name,
+      name: "",
       value: "",
       rating: "",
       retirement: "",
@@ -34,8 +34,8 @@ export default class Edit extends Component {
   }
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log("CLICKED new client button")
-    this.props.createClient(this.state)
+    console.log("CLICKED EDIT client button")
+    this.props.updateClient(this.state)
 }
 
   render() {
@@ -48,46 +48,46 @@ export default class Edit extends Component {
           <ModalBody>👋 </ModalBody>
             <Container>
               <Col >
-                <Form onSubmit={this.handleSubmit}>
+                <Form onChange={this.handleChange} onSubmit={this.handleSubmit}>
                   <FormGroup>
                     <label htmlFor="name"> Name</label>
-                    <FormInput onChange={this.handleChange} name="name" id="name" FormInput={this.props.name} type="text" value={this.props.name} />
+                    <FormInput onChange={this.handleChange} name="name" id="name" FormInput={this.props.name} type="text" value={this.state.name ? this.state.name : this.props.name} />
                   </FormGroup>
           
                   <FormGroup>
                     <label htmlFor="value">Value</label>
-                  <FormInput onChange={this.handleChange} name="value" id="value" placeholder="value" type="text" value={this.props.value}/>                       
+                  <FormInput onChange={this.handleChange} name="value" id="value" placeholder="value" type="text" value={this.state.value ? this.state.value : this.props.value}/>                       
                   </FormGroup>
 
                   <FormGroup>
                     <label htmlFor="rating">Rating</label>
-                  <FormInput onChange={this.handleChange} name="rating" id="rating" placeholder="rating" type="text" value={this.props.rating}/>                       
+                  <FormInput onChange={this.handleChange} name="rating" id="rating" placeholder="rating" type="text" value={this.state.rating ? this.state.rating : this.props.rating}/>                       
                   </FormGroup>
 
                   <FormGroup>
                     <label htmlFor="retirement">Retirement?</label>
-                  <FormInput onChange={this.handleChange} name="retirement" id="retirement" placeholder="retirement" type="text" value={this.props.retirement}/>                       
+                  <FormInput onChange={this.handleChange} name="retirement" id="retirement" placeholder="retirement" type="text" value={this.state.retirement ? this.state.retirement : this.props.retirement}/>                       
                   </FormGroup>
 
                   <FormGroup>
                     <label htmlFor= "address" >Address</label>
-                    <FormInput onChange={this.handleChange} name="address" id="retirement" placeholder="address"  type="text" value={this.props.address}></FormInput>
+                    <FormInput onChange={this.handleChange} name="address" id="retirement" placeholder="address"  type="text" value={this.state.address ? this.state.address : this.props.address}></FormInput>
                   </FormGroup>
 
                   <FormGroup>
                     <label htmlFor= "birth" >Birth</label>
-                    <FormInput onChange={this.handleChange} name="birth" id="retirement" placeholder="birth"  type="text" value={this.props.birth}></FormInput>
+                    <FormInput onChange={this.handleChange} name="birth" id="retirement" placeholder="birth"  type="text" value={this.state.birth ? this.state.birth : this.props.birth}></FormInput>
                   </FormGroup>
 
                   <FormGroup>
                     <label htmlFor= "notes" >Notes</label>
-                    <FormTextarea onChange={this.handleChange} name="notes" id="retirement" placeholder="notes" type="text" value={this.props.notes}></FormTextarea>
+                    <FormTextarea onChange={this.handleChange} name="notes" id="retirement" placeholder="notes" type="text" value={this.state.notes ? this.state.notes : this.props.notes}></FormTextarea>
                     {/* <FormInput onChange={this.handleChange} name="notes" id="retirement" placeholder="notes"  ></FormInput> */}
                   </FormGroup>
 
                   <FormGroup>
                     <label htmlFor= "profession" >Profession</label>
-                    <FormInput onChange={this.handleChange} name="profession" id="retirement" placeholder="profession" type="text" value={this.props.profession} ></FormInput>
+                    <FormInput onChange={this.handleChange} name="profession" id="retirement" placeholder="profession" type="text" value={this.state.profession ? this.state.profession : this.props.profession} ></FormInput>
                   </FormGroup>
       
                     <br></br>

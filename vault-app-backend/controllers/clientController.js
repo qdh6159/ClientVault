@@ -85,13 +85,13 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
 
   try {
-    const updatedPlant = await Client.findByIdAndUpdate(req.params.id, req.body, {new: true});
+    const updatedClient = await Client.findByIdAndUpdate(req.params.id, req.body, {new: true});
     res.json({
       status: {
             code: 201,
             message: "Resource successfully updated"
           },
-      data: updatedPlant
+      data: updatedClient
     });
   } catch(err){
     res.send(err)

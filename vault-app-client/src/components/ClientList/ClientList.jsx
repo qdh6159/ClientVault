@@ -136,7 +136,7 @@ function ClientList(props){
               <h3 class="clientInfo">Client Info</h3>
 
            
-              <AccountDetail value={value} name={name} birth ={birth} address={address} notes={notes} profession={profession} id={id} rating={rating} />
+              <AccountDetail updateClient={props.updateClient} value={value} name={name} birth ={birth} address={address} notes={notes} profession={profession} id={id} rating={rating} />
             </Col>
           </div>  
         </Row>

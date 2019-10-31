@@ -39,8 +39,8 @@ class MainContainer extends Component {
             console.log(err)
         }
     }
-    updatePlant = async (id, formData) => {
-        const updatePlant = await fetch(`${process.env.REACT_APP_BACKEND_ADDRESS}/clients/${id}`, {
+    updateClient = async (id, formData) => {
+        const updateClient = await fetch(`http://localhost:9000/clients/${id}`, {
             method: "PUT",
             body: JSON.stringify(formData),
             credentials: "include",
@@ -48,14 +48,14 @@ class MainContainer extends Component {
                 "Content-Type": "application/json"
             }
         })
-        const parsedResponse = await updatePlant.json();
+        const parsedResponse = await updateClient.json();
         if(parsedResponse.status.code === 201){
             this.setState({
-                clients: this.state.clients.map(function(plant){
-                    if(plant._id === id){
+                clients: this.state.clients.map(function(client){
+                    if(client._id === id){
                         return parsedResponse.data
                     }else{
-                        return plant
+                        return client
                     }
                 })
             })
@@ -126,7 +126,7 @@ class MainContainer extends Component {
             <div>
                 <ClientNav createClient= {this.createClient} />
                 {/* <h3>.</h3> */}
-                <ClientList turnOffRetirementFilter={this.turnOffRetirementFilter} engageRetirementFilter={this.engageRetirementFilter} updatePlant={this.updatePlant} deleteClient={this.deleteClient} clients={clientFilter} />
+                <ClientList updateClient={this.updateClient} turnOffRetirementFilter={this.turnOffRetirementFilter} engageRetirementFilter={this.engageRetirementFilter} updatePlant={this.updatePlant} deleteClient={this.deleteClient} clients={clientFilter} />
                 <StatusBar />
                 
             </div>
