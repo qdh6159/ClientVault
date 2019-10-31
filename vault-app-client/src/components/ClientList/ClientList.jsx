@@ -104,7 +104,9 @@ function ClientList(props){
           <Col class="bigCol" style={{marginTop: 30},{positionRight: 10}}>2 / 12
             <div fluid lg="3" class="mainJumbo">
 
-              <h1 class="mainName">{name} <span class="mainSpin"><Spinner style={{ width: '3rem', height: '3rem' }} type="grow" color="success" /></span></h1> 
+              <h1 class="mainName">{name} <span class="mainSpin">
+                {/* <Spinner style={{ width: '3rem', height: '3rem' }} type="grow" color="success" /> */}
+                </span></h1> 
               <div class="accounts">
                 <Accounts value = {value} />
                 

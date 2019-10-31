@@ -219,34 +219,97 @@ table {
 
 .callOne{
   height: 100%;
-  width: 30%;
-  border: 2px solid blue;
-  position: relative;
+  width: 150px;
+  border: 0px solid black;
+  float: left;
+  /* position: relative;
+  display: flex;
+  flex-direction: row; */
 }
 .callTwo{
   height: 100%;
-  width: 149px;
+  width: 240px;
   border: 2px solid blue;
   /* position: relative; */
-  display: inline-flex;
+  /* display: inline-flex; */
   margin-left: 0px;
+  float: left;
   /* float: left; */
+  background-color: rgba(25, 8, 48, 0.39);
 }
 
 .callThree{
   height: 100%;
-  width: 119px;
+  width: 100px;
   border: 2px solid blue;
   /* position: relative; */
-  display: inline-flex;
-  margin-left: 0px;
-  float: right;
+  /* display: inline-flex; */
+  /* margin-left: 0px; */
+  float: left;
+  /* float: left; */
 }
 
 .callName{
-  height: 80px;
-  width: 119px;
-  border: 12px solid blue;
-  text-align: center;
+  height: 50px;
+  width: 100%;
+  margin-top: 5px;
+  /* border: 2px solid yellow; */
+  /* position: relative; */
+  /* display: inline-flex; */
+  /* margin-left: 0px; */
+  float: left;
+  /* float: left; */
   
+}
+
+.callType{
+  height: 30px;
+  width: 90px;
+  border: 2px solid blue;
+  /* position: relative; */
+  /* display: inline-flex; */
+  /* margin-left: 0px; */
+  float: left;
+  /* float: left; */
+  margin-left: 70px;
+  margin-bottom: 2px;
+}
+.callIncoming{
+  height: 30px;
+  width: 180px;
+  border: 2px solid blue;
+  /* position: relative; */
+  /* display: inline-flex; */
+  /* margin-left: 0px; */
+  float: left;
+  /* float: left; */
+  margin-left: 29px;
+}
+
+.callName{
+  color: white;
+  font-weight: bold;
+}
+
+img {
+  height: 120px;
+  width: 150px;
+  border-radius: 8px;
+  
+}
+
+.callAnswer{
+  height: 25px;
+  width: 90px;
+  border: 2px solid blue;
+  /* position: relative; */
+  /* display: inline-flex; */
+  /* margin-left: 0px; */
+  float: left;
+  /* float: left; */
+  margin-top: 10px;
+}
+
+.callIn {
+  color: white;
 }

@@ -4,6 +4,8 @@ import { Form, FormInput, FormGroup, FormTextarea } from "shards-react";
 import { Container, Col } from "shards-react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css"
+import { Badge, Spinner, ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText,  ButtonGroup } from 'reactstrap';
+
 
 export default class Edit extends Component {
   constructor(props) {
