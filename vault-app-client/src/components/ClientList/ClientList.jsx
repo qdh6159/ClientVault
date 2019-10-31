@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import { Table, Container, Card, Button, CardHeader, CardFooter, CardBody,CardTitle, Jumbotron, Row, Col, Spinner }from 'reactstrap';
 import Filter from '../filters/FilterComponent'
 import StockTable from '../table/TableComponent'
-import StockNav from '../stockNav/StockNav'
 import Accounts from '../accounts/Accounts'
 import AccountDetail from '../accounts/AccountDetail'
 // import Chart from '../chart/Chart'
+// import StockNav from '../stockNav/StockNav'
 
 function ClientList(props){
   const [name, setName] = useState(null)
@@ -22,15 +22,18 @@ function ClientList(props){
   const clients = props.clients.map(function(client, index){
     const click = function(){
       console.log("click button")
+      console.log(client.name)
+      console.log(client._id)
+      console.log(client.profession)
       setLoading(true)
       setName(client.name)
       setValue(client.value)
       setId(client._id)
-      setAddress()
-      setRating()
-      setBirth()
-      setNotes()
-      setProfession()
+      setAddress(client.address)
+      setRating(client.rating)
+      setBirth(client.birth)
+      setNotes(client.notes)
+      setProfession(client.profession)
 
       setTimeout(() => {
         setLoading(false)
@@ -86,8 +89,9 @@ function ClientList(props){
       // const deleteClient = (id) => {
       //   console.log("Deleting client")
       //   props.deleteClient(id)
-      let clientId = {id}
-      console.log({id})
+      // let id = {id}
+      // let birth = {props.clients.birth}
+      // console.log({id})
       return (
       
         <Container fluid>
@@ -131,8 +135,8 @@ function ClientList(props){
             <Col >
               <h3 class="clientInfo">Client Info</h3>
 
-            //***********************pass******************** */
-              <AccountDetail />
+           
+              <AccountDetail value={value} name={name} birth ={birth} address={address} notes={notes} profession={profession} id={id} rating={rating} />
             </Col>
           </div>  
         </Row>

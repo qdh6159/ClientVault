@@ -1,16 +1,16 @@
-import React from 'react'
+import React, {Component} from 'react'
 import { Button, Modal, ModalBody, ModalHeader } from "shards-react";
 import { Form, FormInput, FormGroup, FormTextarea } from "shards-react";
 import { Container, Col } from "shards-react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css"
 
-export default class BasicModalExample extends React.Component {
+export default class Edit extends Component {
   constructor(props) {
     super(props);
     this.state = { 
       open: false,
-      name: "",
+      name: props.name,
       value: "",
       rating: "",
       retirement: "",
@@ -42,8 +42,8 @@ export default class BasicModalExample extends React.Component {
     const { open } = this.state;
     return (
       <div>
-        <Button  id="newButton" onClick={this.toggle}> + New</Button>
-        <Modal  open={open} toggle={this.toggle} >
+        <Button  color="primary" size="lg" block  onClick={this.toggle}> + Edit</Button>
+        <Modal  open={open} toggle={this.toggle}>
           <ModalHeader>+ New Client 🌿</ModalHeader>
           <ModalBody>👋 </ModalBody>
             <Container>
@@ -51,43 +51,43 @@ export default class BasicModalExample extends React.Component {
                 <Form onSubmit={this.handleSubmit}>
                   <FormGroup>
                     <label htmlFor="name"> Name</label>
-                    <FormInput onChange={this.handleChange} name="name" id="name" placeholder="Name" />
+                    <FormInput onChange={this.handleChange} name="name" id="name" FormInput={this.props.name} type="text" value={this.props.name} />
                   </FormGroup>
           
                   <FormGroup>
                     <label htmlFor="value">Value</label>
-                  <FormInput onChange={this.handleChange} name="value" id="value" placeholder="value" />                       
+                  <FormInput onChange={this.handleChange} name="value" id="value" placeholder="value" type="text" value={this.props.value}/>                       
                   </FormGroup>
 
                   <FormGroup>
                     <label htmlFor="rating">Rating</label>
-                  <FormInput onChange={this.handleChange} name="rating" id="rating" placeholder="rating" />                       
+                  <FormInput onChange={this.handleChange} name="rating" id="rating" placeholder="rating" type="text" value={this.props.rating}/>                       
                   </FormGroup>
 
                   <FormGroup>
                     <label htmlFor="retirement">Retirement?</label>
-                  <FormInput onChange={this.handleChange} name="retirement" id="retirement" placeholder="retirement" />                       
+                  <FormInput onChange={this.handleChange} name="retirement" id="retirement" placeholder="retirement" type="text" value={this.props.retirement}/>                       
                   </FormGroup>
 
                   <FormGroup>
                     <label htmlFor= "address" >Address</label>
-                    <FormInput onChange={this.handleChange} name="address" id="retirement" placeholder="address"  ></FormInput>
+                    <FormInput onChange={this.handleChange} name="address" id="retirement" placeholder="address"  type="text" value={this.props.address}></FormInput>
                   </FormGroup>
 
                   <FormGroup>
                     <label htmlFor= "birth" >Birth</label>
-                    <FormInput onChange={this.handleChange} name="birth" id="retirement" placeholder="birth"  ></FormInput>
+                    <FormInput onChange={this.handleChange} name="birth" id="retirement" placeholder="birth"  type="text" value={this.props.birth}></FormInput>
                   </FormGroup>
 
                   <FormGroup>
                     <label htmlFor= "notes" >Notes</label>
-                    <FormTextarea onChange={this.handleChange} name="notes" id="retirement" placeholder="notes" ></FormTextarea>
+                    <FormTextarea onChange={this.handleChange} name="notes" id="retirement" placeholder="notes" type="text" value={this.props.notes}></FormTextarea>
                     {/* <FormInput onChange={this.handleChange} name="notes" id="retirement" placeholder="notes"  ></FormInput> */}
                   </FormGroup>
 
                   <FormGroup>
                     <label htmlFor= "profession" >Profession</label>
-                    <FormInput onChange={this.handleChange} name="profession" id="retirement" placeholder="profession"  ></FormInput>
+                    <FormInput onChange={this.handleChange} name="profession" id="retirement" placeholder="profession" type="text" value={this.props.profession} ></FormInput>
                   </FormGroup>
       
                     <br></br>

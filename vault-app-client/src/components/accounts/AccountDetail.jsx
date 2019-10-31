@@ -1,13 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Badge, Spinner, ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText, Button, ButtonGroup } from 'reactstrap';
+import Edit from '../Edit'
 
-const AccountDetail = (props) => {
+function AccountDetail(props) {
   return (
     <ListGroup>
       <ListGroupItem active>
-      <span class="onValue">
-        All Accounts
-        </span>
+     
+       Client ID: {props.id}
+        
+       
         <h2 class ="mainValue">{props.value}</h2>
         <p class="percent">+ 1.97%  <h5 class="privateClient"> <Badge size="sm" color="secondary">Private Client</Badge></h5></p> 
         
@@ -23,26 +25,33 @@ const AccountDetail = (props) => {
         <ListGroup>
       <ListGroupItem >
         <ListGroupItemHeading>Recent Activity</ListGroupItemHeading>
-        <ListGroupItemText>
-        -Bought 500 shares of AAPL 
-        </ListGroupItemText>        
+        {/* <ListGroupItemText> */}
+            <ul class="info">
+                <li>Bought 500 shares of AAPL </li>
+                <li>Sold 400 shares of FB</li>
+                <li>Sold 150 shares of TSLA</li>
+            </ul>
+        
+        {/* </ListGroupItemText>         */}
         {/* <hr className="my-2" /> */}
-        <ListGroupItemText>
-        - Sold 400 shares of FB
-        </ListGroupItemText>   
+         
         
         
       </ListGroupItem>
       <ListGroupItem>
         <ListGroupItemHeading>Contact & Personal Info</ListGroupItemHeading>
-        <ListGroupItemText>
-        Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
-        </ListGroupItemText>
+        {/* <ListGroupItemText> */}
+        <ul class="info">
+                <li>ADDRESS: {props.address} </li>
+                <li>DOB: {props.birth}</li>
+                <li>Profession: {props.profession}</li>
+            </ul>
+        {/* </ListGroupItemText> */}
       </ListGroupItem>
       <ListGroupItem>
         <ListGroupItemHeading>Notes</ListGroupItemHeading>
         <ListGroupItemText>
-        QH: 12-13-2018; Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+        {props.notes}
         </ListGroupItemText>
       </ListGroupItem>
     </ListGroup>
@@ -51,6 +60,7 @@ const AccountDetail = (props) => {
         
       </ListGroupItem>
       <Button color="primary" size="lg" block>Edit</Button>
+      <Edit value={props.value} name={props.name} birth ={props.birth} address={props.address} notes={props.notes} profession={props.profession} id={props.id} rating={props.rating}  />
     <Button color="success" size="lg" block>+ New Appointment</Button>
     <Button color="secondary" size="lg" block>Correspondence</Button>
     </ListGroup>
