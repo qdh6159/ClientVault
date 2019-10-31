@@ -2,8 +2,9 @@ import React from 'react';
 import { Table } from 'reactstrap';
 const StockTable = (props) => {
   return (
-    
+    <div class="tableDiv">
     <Table size="sm" dark hover >
+        
       <thead>
         <tr>
           <th>Ticker</th>
@@ -50,7 +51,9 @@ const StockTable = (props) => {
           <td>300</td>
         </tr>
       </tbody>
+      
     </Table>
+    </div>
   );
 }
 

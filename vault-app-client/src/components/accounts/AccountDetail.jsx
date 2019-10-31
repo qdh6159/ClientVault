@@ -7,7 +7,7 @@ function AccountDetail(props) {
     <ListGroup>
       <ListGroupItem active>
      
-       Client ID: 
+      {props.name}
        
         
        
@@ -46,6 +46,7 @@ function AccountDetail(props) {
                 <li>ADDRESS: {props.address} </li>
                 <li>DOB: {props.birth}</li>
                 <li>Profession: {props.profession}</li>
+                <li>Email: myclient@gmail.com</li>
             </ul>
         {/* </ListGroupItemText> */}
       </ListGroupItem>
@@ -60,7 +61,7 @@ function AccountDetail(props) {
       </ListGroup>
         
       </ListGroupItem>
-      <Button color="primary" size="lg" block>Edit</Button>
+      {/* <Button color="primary" size="lg" block>Edit</Button> */}
       <Edit updateClient={props.updateClient} value={props.value} name={props.name} birth ={props.birth} address={props.address} notes={props.notes} profession={props.profession} id={props.id} rating={props.rating}  />
     <Button color="success" size="lg" block>+ New Appointment</Button>
     <Button color="secondary" size="lg" block>Correspondence</Button>

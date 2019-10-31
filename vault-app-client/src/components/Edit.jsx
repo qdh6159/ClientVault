@@ -32,10 +32,11 @@ export default class Edit extends Component {
         [e.target.name] : e.target.value
     })
   }
-  handleSubmit = (e) => {
-    e.preventDefault();
+  handleSubmit = () => {
+    // e.preventDefault();
     console.log("CLICKED EDIT client button")
-    this.props.updateClient(this.state)
+    this.toggle()
+    this.props.updateClient(this.props.id,this.state)
 }
 
   render() {

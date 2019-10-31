@@ -169,6 +169,7 @@ table {
 .privateClient{
   display: inline-block;
   margin-left: 47px;
+  margin-left: 20px;
 }
 
 .bigCol {
@@ -208,4 +209,44 @@ table {
   list-style-type: none;
   text-align: left;
   padding: 10px;
+}
+.lead{
+  margin-top: 120px;
+}
+.table{
+  margin-top: 0px;
+}
+
+.callOne{
+  height: 100%;
+  width: 30%;
+  border: 2px solid blue;
+  position: relative;
+}
+.callTwo{
+  height: 100%;
+  width: 149px;
+  border: 2px solid blue;
+  /* position: relative; */
+  display: inline-flex;
+  margin-left: 0px;
+  /* float: left; */
+}
+
+.callThree{
+  height: 100%;
+  width: 119px;
+  border: 2px solid blue;
+  /* position: relative; */
+  display: inline-flex;
+  margin-left: 0px;
+  float: right;
+}
+
+.callName{
+  height: 80px;
+  width: 119px;
+  border: 12px solid blue;
+  text-align: center;
+  
 }

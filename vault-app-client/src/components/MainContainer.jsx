@@ -49,6 +49,7 @@ class MainContainer extends Component {
             }
         })
         const parsedResponse = await updateClient.json();
+        console.log(parsedResponse)
         if(parsedResponse.status.code === 201){
             this.setState({
                 clients: this.state.clients.map(function(client){
@@ -60,7 +61,7 @@ class MainContainer extends Component {
                 })
             })
         }
-        console.log(parsedResponse)
+        
     }
     createClient = async (formData) => {
         console.log(formData)

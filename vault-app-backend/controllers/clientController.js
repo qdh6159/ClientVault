@@ -1,7 +1,7 @@
 const express = require('express');
 // Next we set up the Router
 const router = express.Router();
-// const bodyParser     = require('body-parser');
+const bodyParser     = require('body-parser');
 
 // require Our Model - Remember Model is
 // a representation of our data

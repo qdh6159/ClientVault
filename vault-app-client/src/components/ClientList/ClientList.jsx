@@ -96,7 +96,7 @@ function ClientList(props){
       
         <Container fluid>
         <Row>
-          <Col id="playList" xs="3">1 / 12
+          <Col id="playList" xs="3">
           <Filter turnOffRetirementFilter={props.turnOffRetirementFilter} engageRetirementFilter= {props.engageRetirementFilter} />
           <ul class="plantList">{clients}</ul>
           </Col>
@@ -112,7 +112,7 @@ function ClientList(props){
               {/* <h1 className="display-3">Name:{name} </h1>
               <h2 className="display-3">Value:{value} </h2> */}
               <p className="lead">Top Preformers</p>
-              <hr className="my-2" />
+              {/* <hr className="my-2" /> */}
               {/* <StockNav /> */}
               <StockTable />
 
