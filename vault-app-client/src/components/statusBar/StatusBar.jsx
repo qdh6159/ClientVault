@@ -1,5 +1,5 @@
 import React from "react"
-import { Table, Badge, Container, Card, Button, CardHeader, CardFooter, CardBody,CardTitle, Jumbotron, Row, Col, Spinner }from 'reactstrap';
+import {Toast, ToastBody, ToastHeader,  Table, Badge, Container, Card, Button, CardHeader, CardFooter, CardBody,CardTitle, Jumbotron, Row, Col, Spinner }from 'reactstrap';
 
 function StatusBar(props) {
 
@@ -17,8 +17,16 @@ function StatusBar(props) {
             </div>
             <div class="callThree" >
             <span class="mainSpin"><Spinner style={{ width: '4rem', height: '4rem' }} type="grow" color="success" /></span>
-            <div class="callAnswer"><Button style={{ width: '6rem', height: '2rem' }} size="sm" color="success">Answer</Button></div>
+            <div class="callAnswer"><Button style={{ width: '6rem', height: '2.5rem' }} size="sm" color="success">Answer</Button></div>
             </div>
+            <Toast style={{ float: 'right', marginTop: '1rem', marginRight: '1rem' }}>
+        <ToastHeader icon="secondary">
+          1 New Email 
+        </ToastHeader>
+        <ToastBody>
+          This is a toast with a secondary icon — check it out!
+        </ToastBody>
+      </Toast>
             
             
 
